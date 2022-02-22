@@ -22,7 +22,6 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/product")
-@PropertySource("classpath:upload_file.properties")
 public class ProductController {
     private final IProductService productService = new ProductService();
 
