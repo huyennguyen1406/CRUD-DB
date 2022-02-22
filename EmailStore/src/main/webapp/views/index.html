@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Setting</h2>
+<form th:action="@{/home/storage}" th:method="POST" th:object="${mail}">
+    <table>
+        <thead>
+        <tr>
+            <th>Languages</th>
+            <td>
+                <label for="language">
+                    <select th:field="*{language}" id="language">
+                        <option th:value="Eng">English</option>
+                        <option th:value="Vie">Vietnamese</option>
+                        <option th:value="Jpn">Japanese</option>
+                        <option th:value="Chi">Chinese</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>Page size</th>
+            <td>
+                <label for="page">
+                    Show
+                    <select th:field="*{pageSize}" id="page">
+                        <option th:value="5">5</option>
+                        <option th:value="10">10</option>
+                        <option th:value="15">15</option>
+                        <option th:value="25">25</option>
+                        <option th:value="50">50</option>
+                        <option th:value="100">100</option>
+                    </select>
+                    emails per page
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <th>Spams filter</th>
+            <td>
+                <label>
+                    <input type="checkbox" checked th:field="*{spamFilter}" th:value="true"> Enable spams filter
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <th>Signature</th>
+            <td>
+                <label>
+                    <textarea th:field="*{signature}" rows="4" cols="50"></textarea>
+                </label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <button type="submit"> Submit</button>
+</form>
+</body>
+</html>
